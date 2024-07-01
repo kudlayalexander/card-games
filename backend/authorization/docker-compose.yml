@@ -1,0 +1,13 @@
+networks:
+  app:
+    driver: bridge
+    external: true
+
+services:
+  authorization_db:
+    image: couldl1e/mongo:latest
+    container_name: authorization_db
+    networks:
+      app:
+    ports:
+      - "27017:27017"
